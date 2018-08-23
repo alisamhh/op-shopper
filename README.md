@@ -26,4 +26,10 @@ yarn dev
 
 Be sure to check out the other npm scripts too.
 
+## Project Plan
+
+- Create data model
+  - migration
+  - seeds
+
 
