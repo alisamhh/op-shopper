@@ -22,3 +22,5 @@ yarn dev
 
 Be sure to check out the other npm scripts too.
 
+# op-shopper
+App for op shops to list items online for customers to browse.
