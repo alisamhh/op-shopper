@@ -32,9 +32,7 @@ Be sure to check out the other npm scripts too.
   - migration
   - seeds
 
-For items
-  - Create routes
-    - /all
-    - /addItem
+TO DO:
+  - Finish edit/delete buttons on itemsOne page.
 
 
