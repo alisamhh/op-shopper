@@ -1,0 +1,65 @@
+<h3>Add item</h3>
+<form action="/item/add" method="post">
+
+    Category:
+    <select name="category">
+      <option selected value="">Please select...</option>
+      <option value="Clothing">Clothing</option>
+{{!--       <option value="Appliances">Appliances</option>
+      <option value="Books">Books</option>
+      <option value="Toys">Toys</option>
+      <option value="Bedding">Bedding</option> --}}
+    </select><br>
+    Subcategory:
+    <select name="subcategory">
+      <option selected value="">Please select...</option>      
+      <option value="Tops">Tops</option>
+{{!--       <option value="bottoms">Bottoms</option>
+      <option value="footwear">Footwear</option> --}}
+    </select><br>
+    Item:
+    <select name="item">
+      <option selected value="">Please select...</option>      
+      <option value="Tee">Tee</option>
+      <option value="Shirt">Shirt</option>
+      <option value="Crop top">Crop top</option>
+      <option value="Dress">Dress</option>
+      <option value="Sweater">Sweater</option>
+      <option value="Jacket">Jacket</option>
+    </select><br>
+    Size:
+    <select name="size">
+      <option selected value="">Please select...</option>      
+      <option value="6">6</option>
+      <option value="8">8</option>
+      <option value="10">10</option>
+      <option value="12">12</option>
+      <option value="14">14</option>
+      <option value="16">16</option>
+      <option value="18">18</option>
+      <option value="20">20</option>
+    </select><br>
+    Condition:
+    <select name="condition">
+      <option selected value="">Please select...</option>      
+      <option value="Used">Used</option>
+      <option value="New">New</option>
+    </select><br>
+    Brand:
+    <select name="brand">
+      <option selected value="">Please select...</option>      
+      <option value="Cotton On">Cotton On</option>
+      <option value="Country Road">Country Road</option>
+      <option value="Dotti">Dotti</option>
+      <option value="Factorie">Factorie</option>
+      <option value="Forever New">Forever New</option>
+      <option value="Glassons">Glassons</option>
+      <option value="Jay Jays">Jay Jays</option>
+      <option value="Jeans West">Jeans West</option>
+      <option value="Just Jeans">Just Jeans</option>
+      <option value="Kookai">Kookai</option>
+      <option value="Top Shop">Top Shop</option>
+    </select><br>
+    <input type="hidden" name="user_id">
+   <button>Add Item</button>
+</form>
