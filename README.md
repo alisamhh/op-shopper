@@ -34,5 +34,6 @@ Be sure to check out the other npm scripts too.
 
 TO DO:
   - Finish edit/delete buttons on itemsOne page.
+    - See this link: https://www.w3schools.com/tags/att_button_formaction.asp
 
 
