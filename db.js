@@ -3,16 +3,53 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers
+  addItem,
+  getItems,
+  getItem,
+  editItem,
+  deleteItem
 }
 
-function getUsers (testConn) {
+function addItem (item, testConn) {
   const conn = testConn || connection
-  return conn('users').select()
+  return conn('items')
+    .insert({
+      'category': item.category,
+      'subcategory': item.subcategory,
+      'item': item.item,
+      'size': item.size,
+      'condition': item.condition,
+      'brand': item.brand
+    })
 }
 
-function getUser (id, testConn) {
+function getItems (testConn) {
   const conn = testConn || connection
-  return conn('users').where('id', id).first()
+  return conn('items').select()
+}
+
+function getItem (id, testConn) {
+  const conn = testConn || connection
+  return conn('items').where('id', id).first()
+}
+
+function editItem (id, item, testConn) {
+  const conn = testConn || connection
+  return conn('users')
+    .where('id', id)
+    .update({
+      condition: item.condition,
+      category: item.category,
+      subcategory: item.subcategory,
+      item: item.item,
+      size: item.size,
+      brand: item.brand
+    })
+}
+
+function deleteItem (id, testConn) {
+  const conn = testConn || connection
+  return conn('items')
+    .where('id', id)
+    .del()
 }

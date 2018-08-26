@@ -1,0 +1,9 @@
+<div class="row">
+  {{#each items}}
+    <div class="three columns">
+      <strong>{{brand}}</strong> {{item}}<br>
+      size {{size}} ({{condition}})<br>
+      <a href="/items/{{id}}"><button>View item</button></a>
+    </div>
+  {{/each}}
+</div>

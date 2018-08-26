@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-knex",
+  "name": "op-shopper",
   "version": "0.1.4",
-  "description": "Express boilerplate with Knex.js",
+  "description": "App for op shops to list items online for customers to browse.",
   "main": "index.js",
   "scripts": {
     "knex": "knex",
