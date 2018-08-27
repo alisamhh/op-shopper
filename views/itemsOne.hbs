@@ -1,41 +1,41 @@
-<div>
-  <h2>Item #{{id}}</h2>
-  <table>
-    <tr>
-      <th>Condition</th>
-      <td>{{condition}}</td>
-    </tr>
-    <tr>
-      <th>Category</th>
-      <td>{{category}}</td>
-    </tr>
-    <tr>
-      <th>Subcategory</th>
-      <td>{{subcategory}}</td>
-    </tr>
-    <tr>
-      <th>Item</th>
-      <td>{{item}}</td>
-    </tr>
-    <tr>
-      <th>Size</th>
-      <td>{{size}}</td>
-    </tr>
-    <tr>
-      <th>Brand</th>
-      <td>{{brand}}</td>
-    </tr>
-  </table> 
+<h2>Item #{{id}}</h2>
+<table>
+  <tr>
+    <th>Condition</th>
+    <td>{{condition}}</td>
+  </tr>
+  <tr>
+    <th>Category</th>
+    <td>{{category}}</td>
+  </tr>
+  <tr>
+    <th>Subcategory</th>
+    <td>{{subcategory}}</td>
+  </tr>
+  <tr>
+    <th>Item</th>
+    <td>{{item}}</td>
+  </tr>
+  <tr>
+    <th>Size</th>
+    <td>{{size}}</td>
+  </tr>
+  <tr>
+    <th>Brand</th>
+    <td>{{brand}}</td>
+  </tr>
+</table> 
+
+<div class="container">
+  <form action="/items/edit/{{id}}" method="get">
+    <button>Edit</button>
+  </form>
+
+  <form action="/items/delete/{{id}}" method="post">
+    <button>Delete</button>
+  </form>
 </div>
 
-{{!-- TRIED PUTTING THE BELOW BUTTONS NEXT TO EACH OTHER USING class="row" and class="one column", DIDN'T WORK. --}}
-<form action="/items/edit/{{id}}" method="get">
-  <button>Edit item</button>
-</form>
-
-<form action="/items/delete/{{id}}" method="post">
-  <button>Delete item</button>
-</form>
 
 {{!-- ANOTHER OPTION TO DISPLAY THE TABLE
 <div>
