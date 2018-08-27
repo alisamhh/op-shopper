@@ -35,7 +35,7 @@ function getItem (id, testConn) {
 
 function editItem (id, item, testConn) {
   const conn = testConn || connection
-  return conn('users')
+  return conn('items')
     .where('id', id)
     .update({
       condition: item.condition,
