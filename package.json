@@ -2,14 +2,14 @@
   "name": "op-shopper",
   "version": "0.1.4",
   "description": "App for op shops to list items online for customers to browse.",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "seed": "yarn knex seed:run",
     "migrate": "yarn knex migrate:latest",
     "rollback": "yarn knex migrate:rollback",
     "dev": "nodemon index",
-    "start": "node server & webpack --config client/webpack.config.js --watch",
+    "start": "node server & webpack --config webpack.config.js --watch",
     "test": "jest --watch --noStackTrace"
   },
   "babel": {

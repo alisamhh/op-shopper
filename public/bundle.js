@@ -101,6 +101,7 @@ __webpack_require__.r(__webpack_exports__);
  // import { HashRouter as Router, Route } from 'react-router-dom'
 
 
+/* import Items from './Items' */
 
 var App = function App(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], null));
