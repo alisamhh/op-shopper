@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 class Item extends React.Component {
   constructor (props) {
@@ -16,4 +16,4 @@ class Item extends React.Component {
   }
 }
 
-export default Item
+export default Item */

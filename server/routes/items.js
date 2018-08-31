@@ -1,4 +1,4 @@
-const express = require('express')
+/* const express = require('express')
 
 const db = require('../db/db')
 
@@ -87,3 +87,4 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router
+ */
