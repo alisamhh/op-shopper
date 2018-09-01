@@ -1,19 +1,11 @@
-/* import React from 'react'
+import React from 'react'
 
 class Item extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-    
-    }
-  }
-
   render () {
-
     return (
-      
+      <button>View item</button>
     )
   }
 }
 
-export default Item */
+export default Item
