@@ -4,9 +4,14 @@ import Item from './Item'
 
 const Items = (props) => {
   return (
-    <div className="items">
+    <div>
       <h1>Test</h1>
-      <Item />
+      <div className='items row'>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+      </div>
     </div>
   )
 }
