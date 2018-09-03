@@ -1,4 +1,4 @@
-/* const express = require('express')
+const express = require('express')
 
 const db = require('../db/db')
 
@@ -72,10 +72,11 @@ router.get('/items/:id', (req, res) => {
     })
 })
 
+// CHANGED TO API WAY
 router.get('/items', (req, res) => {
   db.getItems()
     .then(items => {
-      res.render('itemsAll', {items})
+      res.json({items})
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -87,4 +88,3 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router
- */
