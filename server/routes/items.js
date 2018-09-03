@@ -76,7 +76,7 @@ router.get('/items/:id', (req, res) => {
 router.get('/items', (req, res) => {
   db.getItems()
     .then(items => {
-      res.json({items})
+      res.json({items: items})
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

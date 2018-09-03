@@ -17,6 +17,6 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 // Routes
 
-server.use('/api/v1/users', items)
+server.use('/api/v1/items', items)
 
 module.exports = server
