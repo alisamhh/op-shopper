@@ -4,6 +4,8 @@ const db = require('../db/db')
 
 const router = express.Router()
 
+router.use(express.json())
+
 router.get('/items/add', (req, res) => {
   res.render('itemsAdd')
 })
@@ -73,7 +75,7 @@ router.get('/items/:id', (req, res) => {
 })
 
 // CHANGED TO API WAY
-router.get('/items', (req, res) => {
+router.get('/', (req, res) => {
   db.getItems()
     .then(items => {
       res.json({items: items})
@@ -81,10 +83,6 @@ router.get('/items', (req, res) => {
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
-})
-
-router.get('/', (req, res) => {
-  res.redirect('/items')
 })
 
 module.exports = router

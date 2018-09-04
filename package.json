@@ -4,12 +4,11 @@
   "description": "App for op shops to list items online for customers to browse.",
   "main": "server/index.js",
   "scripts": {
-    "knex": "knex --knexfile ./server/db/knexfile.js",
     "seed": "yarn knex seed:run",
     "migrate": "yarn knex migrate:latest",
     "rollback": "yarn knex migrate:rollback",
     "dev": "nodemon index",
-    "start": "node server & webpack --config webpack.config.js --watch",
+    "client": "webpack --config webpack.config.js --watch",
     "test": "jest --watch --noStackTrace"
   },
   "babel": {
@@ -24,7 +23,8 @@
     "body-parser": "^1.18.3",
     "knex": "^0.15.2",
     "nodemon": "^1.18.3",
-    "sqlite3": "^4.0.2"
+    "sqlite3": "^4.0.2",
+    "superagent": "^3.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

@@ -1,15 +1,13 @@
 import React from 'react'
 
-class Item extends React.Component {
-  render () {
-    return (
-      <div class='three columns'>
-        <span><strong>Brand </strong>Item</span><br />
-        <span>size X (Used)</span><br />
-        <button>View item</button>
-      </div>
-    )
-  }
-}
+export default function Item (props) {
+  const {item} = props
 
-export default Item
+  return (
+    <div className='three columns'>
+      <span><strong>Brand {item.brand}</strong>Item</span><br />
+      <span>size X (Used)</span><br />
+      <button>View item</button>
+    </div>
+  )
+}
