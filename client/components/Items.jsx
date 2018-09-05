@@ -2,7 +2,7 @@ import React from 'react'
 
 import Item from './Item'
 
-import { getItems } from '../api'
+import api from '../api'
 
 class Items extends React.Component {
   constructor (props) {
@@ -12,7 +12,7 @@ class Items extends React.Component {
     }
   }
   componentDidMount () {
-    getItems()
+    api.getItems()
       .then(response => {
         this.setState({
           items: response.body.items

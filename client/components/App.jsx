@@ -3,6 +3,7 @@ import React from 'react'
 
 import Header from './Header'
 import Items from './Items'
+import ItemsAdd from './ItemsAdd'
 import Footer from './Footer'
 
 const App = props => {
@@ -10,6 +11,7 @@ const App = props => {
     <div>
       <Header />
       <Items />
+      <ItemsAdd />
       <Footer />
     </div>
   )

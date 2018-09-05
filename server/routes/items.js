@@ -10,11 +10,11 @@ router.get('/items/add', (req, res) => {
   res.render('itemsAdd')
 })
 
-router.post('/items/add', (req, res) => {
+router.post('/add', (req, res) => {
   const item = req.body
   db.addItem(item)
-    .then(ids => {
-      res.redirect(`/items/${ids[0]}`)
+    .then(() => {
+      res.status(201).end()
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

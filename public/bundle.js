@@ -90,21 +90,34 @@
 /*!***********************!*\
   !*** ./client/api.js ***!
   \***********************/
-/*! exports provided: getItems */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getItems", function() { return getItems; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
 
 var itemsApi = 'http://localhost:3000/api/v1/items';
+
 function getItems() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get(itemsApi).catch(function (err) {
     console.log(err.message);
   });
 }
+
+function addItem(item) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://localhost:3000/api/v1/items/add').send(item).then(function (res) {
+    console.log('success');
+  }).catch(function (err) {
+    console.log(err.message);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getItems: getItems,
+  addItem: addItem
+});
 
 /***/ }),
 
@@ -121,15 +134,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./client/components/Header.jsx");
 /* harmony import */ var _Items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Items */ "./client/components/Items.jsx");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
+/* harmony import */ var _ItemsAdd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ItemsAdd */ "./client/components/ItemsAdd.jsx");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
  // import { HashRouter as Router, Route } from 'react-router-dom'
 
 
 
 
 
+
 var App = function App(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Items__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Items__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ItemsAdd__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -261,7 +276,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      Object(_api__WEBPACK_IMPORTED_MODULE_2__["getItems"])().then(function (response) {
+      _api__WEBPACK_IMPORTED_MODULE_2__["default"].getItems().then(function (response) {
         _this2.setState({
           items: response.body.items
         });
@@ -291,6 +306,201 @@ function (_React$Component) {
   size {item.size} ({item.condition}) <br />
   <Link to={`/items/${item.id}`}><button>View item</button></Link> */
 }
+
+/***/ }),
+
+/***/ "./client/components/ItemsAdd.jsx":
+/*!****************************************!*\
+  !*** ./client/components/ItemsAdd.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api */ "./client/api.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var ItemsAdd =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ItemsAdd, _React$Component);
+
+  function ItemsAdd(props) {
+    var _this;
+
+    _classCallCheck(this, ItemsAdd);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ItemsAdd).call(this, props));
+    _this.state = {
+      category: '',
+      subcategory: '',
+      item: '',
+      size: '',
+      condition: '',
+      brand: '',
+      user_id: ''
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(ItemsAdd, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      _api__WEBPACK_IMPORTED_MODULE_1__["default"].addItem(this.state);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), "Category:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.category,
+        name: "category",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Clothing"
+      }, "Clothing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Appliances"
+      }, "Appliances"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Books"
+      }, "Books"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Toys"
+      }, "Toys"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Bedding"
+      }, "Bedding")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Subcategory:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.subcategory,
+        name: "subcategory",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Tops"
+      }, "Tops"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "bottoms"
+      }, "Bottoms"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "footwear"
+      }, "Footwear")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Item:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.item,
+        name: "item",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Tee"
+      }, "Tee"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Shirt"
+      }, "Shirt"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Crop top"
+      }, "Crop top"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Dress"
+      }, "Dress"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Sweater"
+      }, "Sweater"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Jacket"
+      }, "Jacket")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Size:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.size,
+        name: "size",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "6"
+      }, "6"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8"
+      }, "8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10"
+      }, "10"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "12"
+      }, "12"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "14"
+      }, "14"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "16"
+      }, "16"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "18"
+      }, "18"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "20"
+      }, "20")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Condition:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.condition,
+        name: "condition",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Used"
+      }, "Used"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "New"
+      }, "New")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Brand:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.brand,
+        name: "brand",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Cotton On"
+      }, "Cotton On"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Country Road"
+      }, "Country Road"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Dotti"
+      }, "Dotti"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Factorie"
+      }, "Factorie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Forever New"
+      }, "Forever New"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Glassons"
+      }, "Glassons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Jay Jays"
+      }, "Jay Jays"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Jeans West"
+      }, "Jeans West"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Just Jeans"
+      }, "Just Jeans"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Kookai"
+      }, "Kookai"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Top Shop"
+      }, "Top Shop")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "hidden",
+        name: "user_id"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleClick
+      }, "Add Item"));
+    }
+  }]);
+
+  return ItemsAdd;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ItemsAdd);
 
 /***/ }),
 
