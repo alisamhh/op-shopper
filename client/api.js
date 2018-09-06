@@ -10,9 +10,17 @@ function getItems () {
     })
 }
 
+function getItem (id) {
+  return request
+    .get(`${itemsApi}/${id}`)
+    .catch(err => {
+      console.log(err.message)
+    })
+}
+
 function addItem (item) {
   return request
-    .post('http://localhost:3000/api/v1/items/add')
+    .post(`${itemsApi}/add`)
     .send(item)
     .then((res) => {
       console.log('success')
@@ -24,5 +32,6 @@ function addItem (item) {
 
 export default {
   getItems,
+  getItem,
   addItem
 }

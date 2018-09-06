@@ -4,6 +4,7 @@ import React from 'react'
 import Header from './Header'
 import Items from './Items'
 import ItemsAdd from './ItemsAdd'
+import ItemsOne from './ItemsOne'
 import Footer from './Footer'
 
 const App = props => {
@@ -12,6 +13,7 @@ const App = props => {
       <Header />
       <Items />
       <ItemsAdd />
+      <ItemsOne />
       <Footer />
     </div>
   )
