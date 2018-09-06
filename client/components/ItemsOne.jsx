@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import api from '../api'
 
+import ItemTable from './ItemTable'
 import GoHome from './GoHome'
 
 class ItemsOne extends React.Component {
@@ -25,43 +27,11 @@ class ItemsOne extends React.Component {
     const item = this.state.item
     return (
       <div>
-        <h3>Item #{item.id}</h3>
-        <table>
-          <tbody>
-            <tr>
-              <th>ID</th>
-              <td>{item.id}</td>
-            </tr>
-            <tr>
-              <th>Condition</th>
-              <td>{item.condition}</td>
-            </tr>
-            <tr>
-              <th>Category</th>
-              <td>{item.category}</td>
-            </tr>
-            <tr>
-              <th>Subcategory</th>
-              <td>{item.subcategory}</td>
-            </tr>
-            <tr>
-              <th>Item</th>
-              <td>{item.item}</td>
-            </tr>
-            <tr>
-              <th>Size</th>
-              <td>{item.size}</td>
-            </tr>
-            <tr>
-              <th>Brand</th>
-              <td>{item.brand}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div className="editDel">
-          <button>Edit</button>
+        <ItemTable item={item}/>
+        <button>Edit</button>
+        <Link to={`/delete/${item.id}`}>
           <button>Delete</button>
-        </div>
+        </Link>
         <GoHome />
       </div>
     )

@@ -32,7 +32,7 @@ function addItem (item) {
 
 function deleteItem (id) {
   return request
-    .get(`${itemsApi}/id/${id}`)
+    .get(`${itemsApi}/delete/${id}`)
     .catch(err => {
       console.log(err.message)
     })
@@ -41,5 +41,6 @@ function deleteItem (id) {
 export default {
   getItems,
   getItem,
-  addItem
+  addItem,
+  deleteItem
 }

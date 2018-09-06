@@ -10,7 +10,7 @@ router.get('/items/add', (req, res) => {
   res.render('itemsAdd')
 })
 
-//WORKING WITH REACT
+// THIS IS WORKING WITH REACT
 router.post('/add', (req, res) => {
   const item = req.body
   db.addItem(item)
@@ -45,18 +45,20 @@ router.post('/items/edit/:id', (req, res) => {
     })
 })
 
-router.get('/items/delete/:id', (req, res) => {
+// THIS IS IN PROGRESS
+router.get('/delete/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getItem(id)
     .then(item => {
-      res.render('itemsDelete', item)
+      res.json({item: item})
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
 
-router.post('/items/delete/:id', (req, res) => {
+// THIS IS IN PROGRESS
+router.post('/delete/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteItem(id)
     .then(() => {
