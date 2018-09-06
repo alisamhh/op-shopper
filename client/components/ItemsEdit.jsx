@@ -45,7 +45,7 @@ class ItemsEdit extends React.Component {
   render () {
     return (
       <div>
-        <h3>Add item</h3>
+        <h3>Edit item</h3>
             Category:
         <select value={this.state.category} name="category" onChange={this.handleChange}>
           <option value="">Please select...</option>
