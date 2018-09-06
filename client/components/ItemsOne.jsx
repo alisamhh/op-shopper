@@ -11,15 +11,16 @@ class ItemsOne extends React.Component {
   }
 
   componentDidMount () {
-    api.getItem(this.state.item.id)
+    api.getItem(this.props.match.params.id)
       .then(response => {
         this.setState({
-          item: response.body
+          item: response.body.item
         })
       })
   }
 
   render () {
+    console.log(this.state.item.brand)
     return (
       <div>
         <h3>View item</h3>

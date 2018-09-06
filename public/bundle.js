@@ -589,15 +589,16 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _api__WEBPACK_IMPORTED_MODULE_1__["default"].getItem(this.state.item.id).then(function (response) {
+      _api__WEBPACK_IMPORTED_MODULE_1__["default"].getItem(this.props.match.params.id).then(function (response) {
         _this2.setState({
-          item: response.body
+          item: response.body.item
         });
       });
     }
   }, {
     key: "render",
     value: function render() {
+      console.log(this.state.item.brand);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "View item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.item.brand));
     }
   }]);
