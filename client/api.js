@@ -32,7 +32,10 @@ function addItem (item) {
 
 function deleteItem (id) {
   return request
-    .get(`${itemsApi}/delete/${id}`)
+    .post(`${itemsApi}/delete/${id}`)
+    .then((res) => {
+      console.log('success')
+    })
     .catch(err => {
       console.log(err.message)
     })

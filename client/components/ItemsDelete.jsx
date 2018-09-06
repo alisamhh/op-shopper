@@ -11,6 +11,7 @@ class ItemsDelete extends React.Component {
     this.state = {
       item: {}
     }
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount () {
@@ -22,13 +23,17 @@ class ItemsDelete extends React.Component {
       })
   }
 
+  handleClick (e) {
+    api.deleteItem(this.props.match.params.id)
+  }
+
   render () {
     const item = this.state.item
     return (
       <div>
         <h3>Do you really want to delete below item?</h3>
         <ItemTable item={item}/>
-        <button>Delete</button>
+        <button onClick={this.handleClick}>Delete</button>
         <GoHome />
       </div>
     )

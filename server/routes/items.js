@@ -45,7 +45,7 @@ router.post('/items/edit/:id', (req, res) => {
     })
 })
 
-// THIS IS IN PROGRESS
+// WEBSITE WORKS EVEN WHEN I COMMENT OUT THE BELOW... CAN THE BELOW BE DELETED?
 router.get('/delete/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getItem(id)

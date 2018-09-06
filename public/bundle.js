@@ -121,7 +121,9 @@ function addItem(item) {
 }
 
 function deleteItem(id) {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(itemsApi, "/delete/").concat(id)).catch(function (err) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(itemsApi, "/delete/").concat(id)).then(function (res) {
+    console.log('success');
+  }).catch(function (err) {
     console.log(err.message);
   });
 }
@@ -617,13 +619,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -644,6 +646,7 @@ function (_React$Component) {
     _this.state = {
       item: {}
     };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -659,12 +662,19 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      _api__WEBPACK_IMPORTED_MODULE_1__["default"].deleteItem(this.props.match.params.id);
+    }
+  }, {
     key: "render",
     value: function render() {
       var item = this.state.item;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Do you really want to delete below item?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ItemTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
         item: item
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GoHome__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleClick
+      }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GoHome__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 
