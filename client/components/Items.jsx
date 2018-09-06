@@ -23,7 +23,7 @@ class Items extends React.Component {
   render () {
     return (
       <div>
-        <h1>Test</h1>
+        <h1>Items</h1>
         <div className='items row'>
           {this.state.items.map(item => {
             return <Item key={item.id} item={item} />
