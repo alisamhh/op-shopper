@@ -20,11 +20,44 @@ class ItemsOne extends React.Component {
   }
 
   render () {
-    console.log(this.state.item.brand)
+    const item = this.state.item
     return (
       <div>
-        <h3>View item</h3>
-        <p>{this.state.item.brand}</p>
+        <h3>Item #{item.id}</h3>
+        <table>
+          <tr>
+            <th>ID</th>
+            <td>{item.id}</td>
+          </tr>
+          <tr>
+            <th>Condition</th>
+            <td>{item.condition}</td>
+          </tr>
+          <tr>
+            <th>Category</th>
+            <td>{item.category}</td>
+          </tr>
+          <tr>
+            <th>Subcategory</th>
+            <td>{item.subcategory}</td>
+          </tr>
+          <tr>
+            <th>Item</th>
+            <td>{item.item}</td>
+          </tr>
+          <tr>
+            <th>Size</th>
+            <td>{item.size}</td>
+          </tr>
+          <tr>
+            <th>Brand</th>
+            <td>{item.brand}</td>
+          </tr>
+        </table>
+        <div className="editDel">
+        <button>Edit</button>
+        <button>Delete</button>
+        </div>
       </div>
     )
   }
