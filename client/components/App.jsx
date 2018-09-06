@@ -1,5 +1,5 @@
 import React from 'react'
-// import { HashRouter as Router, Route } from 'react-router-dom'
+import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Header from './Header'
 import Items from './Items'
@@ -9,13 +9,15 @@ import Footer from './Footer'
 
 const App = props => {
   return (
-    <div>
-      <Header />
-      <Items />
-      <ItemsAdd />
-      <ItemsOne />
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Route path='/' component={Header} />
+        <Route exact path='/' component={Items} />
+        <Route path='/add' component={ItemsAdd} />
+        <Route path='/:id?' component={ItemsOne} />
+        <Route path='/' component={Footer} />
+      </div>
+    </Router>
   )
 }
 
