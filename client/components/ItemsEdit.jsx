@@ -1,6 +1,7 @@
 import React from 'react'
 
 import api from '../api'
+import GoHome from './GoHome'
 
 class ItemsEdit extends React.Component {
   constructor (props) {
@@ -45,7 +46,7 @@ class ItemsEdit extends React.Component {
   render () {
     return (
       <div>
-        <h3>Edit item</h3>
+        <h3>Edit item #{this.props.match.params.id}</h3>
             Category:
         <select value={this.state.category} name="category" onChange={this.handleChange}>
           <option value="">Please select...</option>
@@ -107,6 +108,7 @@ class ItemsEdit extends React.Component {
         </select><br />
         <input type="hidden" name="user_id" />
         <button onClick={this.handleClick}>Edit Item</button>
+        <GoHome />
       </div>
     )
   }
