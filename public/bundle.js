@@ -121,7 +121,7 @@ function addItem(item) {
 }
 
 function deleteItem(id) {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(itemsApi, "/delete/").concat(id)).then(function (res) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.delete("".concat(itemsApi, "/delete/").concat(id)).then(function (res) {
     console.log('success');
   }).catch(function (err) {
     console.log(err.message);

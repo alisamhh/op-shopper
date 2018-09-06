@@ -45,20 +45,8 @@ router.post('/items/edit/:id', (req, res) => {
     })
 })
 
-// WEBSITE WORKS EVEN WHEN I COMMENT OUT THE BELOW... CAN THE BELOW BE DELETED?
-router.get('/delete/:id', (req, res) => {
-  const id = Number(req.params.id)
-  db.getItem(id)
-    .then(item => {
-      res.json({item: item})
-    })
-    .catch(err => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
-    })
-})
-
 // THIS IS WORKING WITH REACT
-router.post('/delete/:id', (req, res) => {
+router.delete('/delete/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteItem(id)
     .then(() => {
