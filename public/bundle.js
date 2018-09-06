@@ -107,7 +107,7 @@ function getItems() {
 }
 
 function getItem(id) {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(itemsApi, "/").concat(id)).catch(function (err) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(itemsApi, "/id/").concat(id)).catch(function (err) {
     console.log(err.message);
   });
 }
@@ -162,11 +162,11 @@ var App = function App(props) {
     path: "/",
     component: _Items__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/:id",
-    component: _ItemsOne__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/add",
     component: _ItemsAdd__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/id/:id",
+    component: _ItemsOne__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     component: _Footer__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -270,7 +270,7 @@ function Item(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "three columns"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, item.brand, " "), item.item), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Size ", item.size, " (", item.condition, ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/".concat(item.id)
+    to: "/id/".concat(item.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "View item")));
 }
 

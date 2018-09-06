@@ -8,7 +8,7 @@ export default function Item (props) {
     <div className='three columns'>
       <span><strong>{item.brand} </strong>{item.item}</span><br />
       <span>Size {item.size} ({item.condition})</span><br />
-      <Link to={`/${item.id}`}>
+      <Link to={`/id/${item.id}`}>
         <button>View item</button>
       </Link>
     </div>

@@ -12,7 +12,7 @@ function getItems () {
 
 function getItem (id) {
   return request
-    .get(`${itemsApi}/${id}`)
+    .get(`${itemsApi}/id/${id}`)
     .catch(err => {
       console.log(err.message)
     })
