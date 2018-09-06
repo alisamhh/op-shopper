@@ -69,14 +69,14 @@ router.get('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getItem(id)
     .then(item => {
-      res.json({item})
+      res.json({item: item})
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
 
-// WORKING WITH REACT
+// THIS IS WORKING WITH REACT
 router.get('/', (req, res) => {
   db.getItems()
     .then(items => {
