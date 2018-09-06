@@ -2,6 +2,8 @@ import React from 'react'
 
 import api from '../api'
 
+import GoHome from './GoHome'
+
 class ItemsOne extends React.Component {
   constructor (props) {
     super(props)
@@ -55,9 +57,10 @@ class ItemsOne extends React.Component {
           </tr>
         </table>
         <div className="editDel">
-        <button>Edit</button>
-        <button>Delete</button>
+          <button>Edit</button>
+          <button>Delete</button>
         </div>
+        <GoHome />
       </div>
     )
   }
