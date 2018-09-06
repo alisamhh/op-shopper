@@ -33,6 +33,7 @@ router.post('/item', (req, res) => {
     })
 }) */
 
+// THIS IS WORKING WITH REACT
 router.put('/edit/:id', (req, res) => {
   const id = Number(req.params.id)
   const item = req.body
