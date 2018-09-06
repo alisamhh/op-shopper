@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Item from './Item'
 
@@ -29,6 +30,9 @@ class Items extends React.Component {
             return <Item key={item.id} item={item} />
           })}
         </div>
+        <Link to="/add">
+          <button>Add item</button>
+        </Link>
       </div>
     )
   }
