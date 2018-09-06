@@ -64,7 +64,7 @@ router.post('/items/delete/:id', (req, res) => {
     })
 })
 
-// IN PROGRESS
+// THIS IS WORKING WITH REACT
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getItem(id)
