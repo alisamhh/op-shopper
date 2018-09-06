@@ -165,7 +165,7 @@ var App = function App(props) {
     path: "/add",
     component: _ItemsAdd__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/:id?",
+    path: "/:id",
     component: _ItemsOne__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
@@ -342,7 +342,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(_typeof(this.state.items));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Test"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "items row"
       }, this.state.items.map(function (item) {
@@ -358,11 +357,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Items);
-{
-  /* <strong>{item.brand}</strong> {item.item} <br />
-  size {item.size} ({item.condition}) <br />
-  <Link to={`/items/${item.id}`}><button>View item</button></Link> */
-}
 
 /***/ }),
 
@@ -628,7 +622,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var item = this.state.item;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Item #", item.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Condition"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.condition)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Category"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.category)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Subcategory"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.subcategory)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.item)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.size)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Brand"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.brand))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Item #", item.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Condition"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.condition)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Category"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.category)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Subcategory"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.subcategory)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.item)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.size)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Brand"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.brand)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "editDel"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Delete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GoHome__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }

@@ -21,7 +21,6 @@ class Items extends React.Component {
   }
 
   render () {
-    console.log(typeof this.state.items)
     return (
       <div>
         <h1>Test</h1>
@@ -36,7 +35,3 @@ class Items extends React.Component {
 }
 
 export default Items
-
-{ /* <strong>{item.brand}</strong> {item.item} <br />
-size {item.size} ({item.condition}) <br />
-<Link to={`/items/${item.id}`}><button>View item</button></Link> */ }
