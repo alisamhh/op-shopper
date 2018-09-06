@@ -6,10 +6,6 @@ const router = express.Router()
 
 router.use(express.json())
 
-router.get('/items/add', (req, res) => {
-  res.render('itemsAdd')
-})
-
 // THIS IS WORKING WITH REACT
 router.post('/item', (req, res) => {
   const item = req.body
@@ -21,17 +17,6 @@ router.post('/item', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
-
-/* router.get('/items/edit/:id', (req, res) => {
-  const id = Number(req.params.id)
-  db.getItem(id)
-    .then(item => {
-      res.render('itemsEdit', item)
-    })
-    .catch(err => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
-    })
-}) */
 
 // THIS IS WORKING WITH REACT
 router.put('/edit/:id', (req, res) => {
