@@ -28,7 +28,9 @@ class ItemsOne extends React.Component {
     return (
       <div>
         <ItemTable item={item}/>
-        <button>Edit</button>
+        <Link to={`/edit/${item.id}`}>
+          <button>Edit</button>
+        </Link>
         <Link to={`/delete/${item.id}`}>
           <button>Delete</button>
         </Link>

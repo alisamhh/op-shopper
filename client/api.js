@@ -12,7 +12,7 @@ function getItems () {
 
 function getItem (id) {
   return request
-    .get(`${itemsApi}/id/${id}`)
+    .get(`${itemsApi}/item/${id}`)
     .catch(err => {
       console.log(err.message)
     })
@@ -20,7 +20,19 @@ function getItem (id) {
 
 function addItem (item) {
   return request
-    .post(`${itemsApi}/add`)
+    .post(`${itemsApi}/item`)
+    .send(item)
+    .then((res) => {
+      console.log('success')
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}
+
+function editItem (id, item) {
+  return request
+    .put(`${itemsApi}/edit/${id}`)
     .send(item)
     .then((res) => {
       console.log('success')
@@ -32,7 +44,7 @@ function addItem (item) {
 
 function deleteItem (id) {
   return request
-    .delete(`${itemsApi}/delete/${id}`)
+    .delete(`${itemsApi}/item/${id}`)
     .then((res) => {
       console.log('success')
     })
@@ -45,5 +57,6 @@ export default {
   getItems,
   getItem,
   addItem,
+  editItem,
   deleteItem
 }
