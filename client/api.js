@@ -30,6 +30,14 @@ function addItem (item) {
     })
 }
 
+function deleteItem (id) {
+  return request
+    .get(`${itemsApi}/id/${id}`)
+    .catch(err => {
+      console.log(err.message)
+    })
+}
+
 export default {
   getItems,
   getItem,

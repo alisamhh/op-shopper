@@ -5,6 +5,7 @@ import Header from './Header'
 import Items from './Items'
 import ItemsAdd from './ItemsAdd'
 import ItemsOne from './ItemsOne'
+import ItemsDelete from './ItemsDelete'
 import Footer from './Footer'
 
 const App = props => {
@@ -15,6 +16,7 @@ const App = props => {
         <Route exact path='/' component={Items} />
         <Route path='/add' component={ItemsAdd} />
         <Route path='/id/:id' component={ItemsOne} />
+        <Route path='/delete/:id' component={ItemsDelete} />
         <Route path='/' component={Footer} />
       </div>
     </Router>

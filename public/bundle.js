@@ -120,6 +120,12 @@ function addItem(item) {
   });
 }
 
+function deleteItem(id) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(itemsApi, "/id/").concat(id)).catch(function (err) {
+    console.log(err.message);
+  });
+}
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   getItems: getItems,
   getItem: getItem,
@@ -144,7 +150,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Items__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Items */ "./client/components/Items.jsx");
 /* harmony import */ var _ItemsAdd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ItemsAdd */ "./client/components/ItemsAdd.jsx");
 /* harmony import */ var _ItemsOne__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ItemsOne */ "./client/components/ItemsOne.jsx");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
+/* harmony import */ var _ItemsDelete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ItemsDelete */ "./client/components/ItemsDelete.jsx");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
+
 
 
 
@@ -168,8 +176,11 @@ var App = function App(props) {
     path: "/id/:id",
     component: _ItemsOne__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/delete/:id",
+    component: _ItemsDelete__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
-    component: _Footer__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _Footer__WEBPACK_IMPORTED_MODULE_7__["default"]
   })));
 };
 
@@ -556,6 +567,31 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ItemsAdd);
+
+/***/ }),
+
+/***/ "./client/components/ItemsDelete.jsx":
+/*!*******************************************!*\
+  !*** ./client/components/ItemsDelete.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+
+
+var ItemsDelete = function ItemsDelete() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Go Home")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ItemsDelete);
 
 /***/ }),
 
