@@ -37,52 +37,20 @@ class ItemsAdd extends React.Component {
       condition: ['Used', 'New'],
       brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
     }
-    const pleaseSelect = <option value="">Please select...</option>
+    const dataListsKeys = Object.keys(dataLists)
     return (
       <div>
         <h3>Add item</h3>
-        Category:
-        <select value={this.state.category} name="category" onChange={this.handleChange}>
-          {pleaseSelect}
-          {dataLists.category.map((item) => {
-            return <option key={item} value={item}>{item}</option>
-          })}
-        </select><br />
-        Subcategory:
-        <select value={this.state.subcategory} name="subcategory" onChange={this.handleChange}>
-          {pleaseSelect}
-          {dataLists.subcategory.map((item) => {
-            return <option key={item} value={item}>{item}</option>
-          })}
-        </select><br />
-        Item:
-        <select value={this.state.item} name="item" onChange={this.handleChange}>
-          {pleaseSelect}
-          {dataLists.item.map((item) => {
-            return <option key={item} value={item}>{item}</option>
-          })}
-        </select><br />
-        Size:
-        <select value={this.state.size} name="size" onChange={this.handleChange}>
-          {pleaseSelect}
-          {dataLists.size.map((item) => {
-            return <option key={item} value={item}>{item}</option>
-          })}
-        </select><br />
-        Condition:
-        <select value={this.state.condition} name="condition" onChange={this.handleChange}>
-          {pleaseSelect}
-          {dataLists.condition.map((item) => {
-            return <option key={item} value={item}>{item}</option>
-          })}
-        </select><br />
-        Brand:
-        <select value={this.state.brand} name="brand" onChange={this.handleChange}>
-          {pleaseSelect}
-          {dataLists.brand.map((item) => {
-            return <option key={item} value={item}>{item}</option>
-          })}
-        </select><br />
+        {dataListsKeys.map((item) => {
+          return <div key={item}>{item}
+            <select value={this.state[item]} name={item} onChange={this.handleChange}>
+              <option value="">Please select...</option>
+              {dataLists[item].map((i) => {
+                return <option key={i} value={i}>{i}</option>
+              })}
+            </select>
+          </div>
+        })}
         <input type="hidden" name="user_id" />
         <button onClick={this.handleClick}>Add Item</button>
       </div>

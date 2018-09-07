@@ -487,6 +487,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var dataLists = {
         category: ['Clothing', 'Appliances', 'Books', 'Toys', 'Bedding'],
         subcategory: ['Tops', 'Bottoms', 'Footwear'],
@@ -495,64 +497,23 @@ function (_React$Component) {
         condition: ['Used', 'New'],
         brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
       };
-      var pleaseSelect = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select...");
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), "Category:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.category,
-        name: "category",
-        onChange: this.handleChange
-      }, pleaseSelect, dataLists.category.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          key: item,
-          value: item
-        }, item);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Subcategory:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.subcategory,
-        name: "subcategory",
-        onChange: this.handleChange
-      }, pleaseSelect, dataLists.subcategory.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          key: item,
-          value: item
-        }, item);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Item:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.item,
-        name: "item",
-        onChange: this.handleChange
-      }, pleaseSelect, dataLists.item.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          key: item,
-          value: item
-        }, item);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Size:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.size,
-        name: "size",
-        onChange: this.handleChange
-      }, pleaseSelect, dataLists.size.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          key: item,
-          value: item
-        }, item);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Condition:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.condition,
-        name: "condition",
-        onChange: this.handleChange
-      }, pleaseSelect, dataLists.condition.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          key: item,
-          value: item
-        }, item);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Brand:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        value: this.state.brand,
-        name: "brand",
-        onChange: this.handleChange
-      }, pleaseSelect, dataLists.brand.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          key: item,
-          value: item
-        }, item);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      var dataListsKeys = Object.keys(dataLists);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), dataListsKeys.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: item
+        }, item, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          value: _this2.state[item],
+          name: item,
+          onChange: _this2.handleChange
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "Please select..."), dataLists[item].map(function (i) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            key: i,
+            value: i
+          }, i);
+        })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "hidden",
         name: "user_id"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
