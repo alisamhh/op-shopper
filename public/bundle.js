@@ -501,7 +501,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), dataListsKeys.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: item
-        }, item, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        }, item.charAt(0).toUpperCase() + item.slice(1) + ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
           value: _this2.state[item],
           name: item,
           onChange: _this2.handleChange

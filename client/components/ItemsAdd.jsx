@@ -38,11 +38,12 @@ class ItemsAdd extends React.Component {
       brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
     }
     const dataListsKeys = Object.keys(dataLists)
+
     return (
       <div>
         <h3>Add item</h3>
         {dataListsKeys.map((item) => {
-          return <div key={item}>{item}
+          return <div key={item}>{item.charAt(0).toUpperCase() + item.slice(1) + ' '}
             <select value={this.state[item]} name={item} onChange={this.handleChange}>
               <option value="">Please select...</option>
               {dataLists[item].map((i) => {
