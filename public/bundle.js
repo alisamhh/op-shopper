@@ -324,7 +324,7 @@ var ItemTable = function ItemTable(props) {
     if (i !== 'available' && i !== 'user_id') {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         key: i
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, i), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item[i]));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, i.charAt(0).toUpperCase() + i.slice(1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item[i]));
     }
   }))));
 };

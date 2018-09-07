@@ -11,7 +11,7 @@ const ItemTable = props => {
           {itemKeys.map(i => {
             if (i !== 'available' && i !== 'user_id') {
               return <tr key={i}>
-                <th>{i}</th>
+                <th>{i.charAt(0).toUpperCase() + i.slice(1)}</th>
                 <td>{item[i]}</td>
               </tr>
             }
