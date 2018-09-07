@@ -37,7 +37,8 @@ class ItemsAdd extends React.Component {
       item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
       size: ['6', '8', '10', '12', '14', '16', '18', '20'],
       condition: ['Used', 'New'],
-      brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
+      brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop'],
+      color: ['Black', 'White', 'Grey', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink']
     }
     const dataListsKeys = Object.keys(dataLists)
 

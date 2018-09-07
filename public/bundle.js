@@ -319,7 +319,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ItemTable = function ItemTable(props) {
   var item = props.item;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Item #", item.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Condition"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.condition)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Category"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.category)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Subcategory"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.subcategory)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.item)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.size)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Brand"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.brand)))));
+  var itemKeys = Object.keys(item);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Item #", item.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, itemKeys.map(function (i) {
+    if (i !== 'available' && i !== 'user_id') {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        key: i
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, i), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item[i]));
+    }
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ItemTable);
@@ -497,7 +504,8 @@ function (_React$Component) {
         item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
         size: ['6', '8', '10', '12', '14', '16', '18', '20'],
         condition: ['Used', 'New'],
-        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
+        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop'],
+        color: ['Black', 'White', 'Grey', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink']
       };
       var dataListsKeys = Object.keys(dataLists);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), dataListsKeys.map(function (item) {
@@ -720,7 +728,8 @@ function (_React$Component) {
         item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
         size: ['6', '8', '10', '12', '14', '16', '18', '20'],
         condition: ['Used', 'New'],
-        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
+        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop'],
+        color: ['Black', 'White', 'Grey', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink']
       };
       var dataListsKeys = Object.keys(dataLists);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Edit item #", this.props.match.params.id), dataListsKeys.map(function (item) {
