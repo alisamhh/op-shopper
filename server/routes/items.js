@@ -6,7 +6,6 @@ const router = express.Router()
 
 router.use(express.json())
 
-// THIS IS WORKING WITH REACT
 router.post('/item', (req, res) => {
   const item = req.body
   db.addItem(item)
@@ -18,7 +17,6 @@ router.post('/item', (req, res) => {
     })
 })
 
-// THIS IS WORKING WITH REACT
 router.put('/edit/:id', (req, res) => {
   const id = Number(req.params.id)
   const item = req.body
@@ -31,7 +29,6 @@ router.put('/edit/:id', (req, res) => {
     })
 })
 
-// THIS IS WORKING WITH REACT
 router.delete('/item/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteItem(id)
@@ -40,7 +37,6 @@ router.delete('/item/:id', (req, res) => {
     })
 })
 
-// THIS IS WORKING WITH REACT
 router.get('/item/:id', (req, res) => {
   const id = Number(req.params.id)
   db.getItem(id)
@@ -52,7 +48,6 @@ router.get('/item/:id', (req, res) => {
     })
 })
 
-// THIS IS WORKING WITH REACT
 router.get('/', (req, res) => {
   db.getItems()
     .then(items => {

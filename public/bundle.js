@@ -487,113 +487,72 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var dataLists = {
+        category: ['Clothing', 'Appliances', 'Books', 'Toys', 'Bedding'],
+        subcategory: ['Tops', 'Bottoms', 'Footwear'],
+        item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
+        size: ['6', '8', '10', '12', '14', '16', '18', '20'],
+        condition: ['Used', 'New'],
+        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
+      };
+      var pleaseSelect = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Please select...");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), "Category:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.category,
         name: "category",
         onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Clothing"
-      }, "Clothing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Appliances"
-      }, "Appliances"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Books"
-      }, "Books"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Toys"
-      }, "Toys"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Bedding"
-      }, "Bedding")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Subcategory:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, pleaseSelect, dataLists.category.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: item,
+          value: item
+        }, item);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Subcategory:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.subcategory,
         name: "subcategory",
         onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Tops"
-      }, "Tops"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "bottoms"
-      }, "Bottoms"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "footwear"
-      }, "Footwear")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Item:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, pleaseSelect, dataLists.subcategory.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: item,
+          value: item
+        }, item);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Item:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.item,
         name: "item",
         onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Tee"
-      }, "Tee"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Shirt"
-      }, "Shirt"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Crop top"
-      }, "Crop top"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Dress"
-      }, "Dress"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Sweater"
-      }, "Sweater"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Jacket"
-      }, "Jacket")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Size:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, pleaseSelect, dataLists.item.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: item,
+          value: item
+        }, item);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Size:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.size,
         name: "size",
         onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "6"
-      }, "6"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "8"
-      }, "8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "10"
-      }, "10"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "12"
-      }, "12"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "14"
-      }, "14"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "16"
-      }, "16"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "18"
-      }, "18"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "20"
-      }, "20")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Condition:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, pleaseSelect, dataLists.size.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: item,
+          value: item
+        }, item);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Condition:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.condition,
         name: "condition",
         onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Used"
-      }, "Used"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "New"
-      }, "New")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Brand:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, pleaseSelect, dataLists.condition.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: item,
+          value: item
+        }, item);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Brand:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: this.state.brand,
         name: "brand",
         onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Please select..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Cotton On"
-      }, "Cotton On"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Country Road"
-      }, "Country Road"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Dotti"
-      }, "Dotti"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Factorie"
-      }, "Factorie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Forever New"
-      }, "Forever New"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Glassons"
-      }, "Glassons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Jay Jays"
-      }, "Jay Jays"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Jeans West"
-      }, "Jeans West"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Just Jeans"
-      }, "Just Jeans"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Kookai"
-      }, "Kookai"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Top Shop"
-      }, "Top Shop")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, pleaseSelect, dataLists.brand.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          key: item,
+          value: item
+        }, item);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "hidden",
         name: "user_id"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

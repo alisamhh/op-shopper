@@ -29,67 +29,59 @@ class ItemsAdd extends React.Component {
   }
 
   render () {
+    const dataLists = {
+      category: ['Clothing', 'Appliances', 'Books', 'Toys', 'Bedding'],
+      subcategory: ['Tops', 'Bottoms', 'Footwear'],
+      item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
+      size: ['6', '8', '10', '12', '14', '16', '18', '20'],
+      condition: ['Used', 'New'],
+      brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop']
+    }
+    const pleaseSelect = <option value="">Please select...</option>
     return (
       <div>
         <h3>Add item</h3>
-            Category:
+        Category:
         <select value={this.state.category} name="category" onChange={this.handleChange}>
-          <option value="">Please select...</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Appliances">Appliances</option>
-          <option value="Books">Books</option>
-          <option value="Toys">Toys</option>
-          <option value="Bedding">Bedding</option>
+          {pleaseSelect}
+          {dataLists.category.map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
         </select><br />
-            Subcategory:
+        Subcategory:
         <select value={this.state.subcategory} name="subcategory" onChange={this.handleChange}>
-          <option value="">Please select...</option>
-          <option value="Tops">Tops</option>
-          <option value="bottoms">Bottoms</option>
-          <option value="footwear">Footwear</option>
+          {pleaseSelect}
+          {dataLists.subcategory.map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
         </select><br />
-            Item:
+        Item:
         <select value={this.state.item} name="item" onChange={this.handleChange}>
-          <option value="">Please select...</option>
-          <option value="Tee">Tee</option>
-          <option value="Shirt">Shirt</option>
-          <option value="Crop top">Crop top</option>
-          <option value="Dress">Dress</option>
-          <option value="Sweater">Sweater</option>
-          <option value="Jacket">Jacket</option>
+          {pleaseSelect}
+          {dataLists.item.map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
         </select><br />
-            Size:
+        Size:
         <select value={this.state.size} name="size" onChange={this.handleChange}>
-          <option value="">Please select...</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-          <option value="12">12</option>
-          <option value="14">14</option>
-          <option value="16">16</option>
-          <option value="18">18</option>
-          <option value="20">20</option>
+          {pleaseSelect}
+          {dataLists.size.map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
         </select><br />
-            Condition:
+        Condition:
         <select value={this.state.condition} name="condition" onChange={this.handleChange}>
-          <option value="">Please select...</option>
-          <option value="Used">Used</option>
-          <option value="New">New</option>
+          {pleaseSelect}
+          {dataLists.condition.map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
         </select><br />
-            Brand:
+        Brand:
         <select value={this.state.brand} name="brand" onChange={this.handleChange}>
-          <option value="">Please select...</option>
-          <option value="Cotton On">Cotton On</option>
-          <option value="Country Road">Country Road</option>
-          <option value="Dotti">Dotti</option>
-          <option value="Factorie">Factorie</option>
-          <option value="Forever New">Forever New</option>
-          <option value="Glassons">Glassons</option>
-          <option value="Jay Jays">Jay Jays</option>
-          <option value="Jeans West">Jeans West</option>
-          <option value="Just Jeans">Just Jeans</option>
-          <option value="Kookai">Kookai</option>
-          <option value="Top Shop">Top Shop</option>
+          {pleaseSelect}
+          {dataLists.brand.map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
         </select><br />
         <input type="hidden" name="user_id" />
         <button onClick={this.handleClick}>Add Item</button>
