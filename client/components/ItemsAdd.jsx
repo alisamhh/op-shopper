@@ -2,6 +2,8 @@ import React from 'react'
 
 import api from '../api'
 
+import GoHome from './GoHome'
+
 class ItemsAdd extends React.Component {
   constructor (props) {
     super(props)
@@ -54,6 +56,7 @@ class ItemsAdd extends React.Component {
         })}
         <input type="hidden" name="user_id" />
         <button onClick={this.handleClick}>Add Item</button>
+        <GoHome />
       </div>
     )
   }
