@@ -7,4 +7,3 @@ App for op shops to list items online for customers to browse.
   - refactor
   - css
   - google images api
-  - create json file of category dropdowns?
