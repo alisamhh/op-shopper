@@ -1,4 +1,4 @@
-import request from 'superagent'
++import request from 'superagent'
 
 const itemsApi = 'http://localhost:3000/api/v1/items'
 
