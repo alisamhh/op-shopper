@@ -8,3 +8,6 @@ App for op shops to list items online for customers to browse.
   - css
   - google images api
   - create json file of category dropdowns?
+  
+  Conditional dropdowns:
+  https://stackblitz.com/edit/react-mvqwr7?file=index.js
