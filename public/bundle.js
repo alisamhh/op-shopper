@@ -434,6 +434,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api */ "./client/api.js");
 /* harmony import */ var _GoHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoHome */ "./client/components/GoHome.jsx");
+/* harmony import */ var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../public/data/itemData.json */ "./public/data/itemData.json");
+var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../public/data/itemData.json */ "./public/data/itemData.json", 1);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -453,6 +455,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -498,16 +501,7 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var dataLists = {
-        category: ['Clothing', 'Appliances', 'Books', 'Toys', 'Bedding'],
-        subcategory: ['Tops', 'Bottoms', 'Footwear'],
-        item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
-        size: ['6', '8', '10', '12', '14', '16', '18', '20'],
-        condition: ['Used', 'New'],
-        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop'],
-        color: ['Black', 'White', 'Grey', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink']
-      };
-      var dataListsKeys = Object.keys(dataLists);
+      var dataListsKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), dataListsKeys.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: item
@@ -517,7 +511,7 @@ function (_React$Component) {
           onChange: _this2.handleChange
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: ""
-        }, "Please select..."), dataLists[item].map(function (i) {
+        }, "Please select..."), _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__[item].map(function (i) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
             key: i,
             value: i
@@ -642,6 +636,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api */ "./client/api.js");
 /* harmony import */ var _GoHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoHome */ "./client/components/GoHome.jsx");
+/* harmony import */ var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../public/data/itemData.json */ "./public/data/itemData.json");
+var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../public/data/itemData.json */ "./public/data/itemData.json", 1);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -661,6 +657,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -722,16 +719,7 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var dataLists = {
-        category: ['Clothing', 'Appliances', 'Books', 'Toys', 'Bedding'],
-        subcategory: ['Tops', 'Bottoms', 'Footwear'],
-        item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
-        size: ['6', '8', '10', '12', '14', '16', '18', '20'],
-        condition: ['Used', 'New'],
-        brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop'],
-        color: ['Black', 'White', 'Grey', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink']
-      };
-      var dataListsKeys = Object.keys(dataLists);
+      var dataListsKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Edit item #", this.props.match.params.id), dataListsKeys.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: item
@@ -741,7 +729,7 @@ function (_React$Component) {
           onChange: _this3.handleChange
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: ""
-        }, "Please select..."), dataLists[item].map(function (i) {
+        }, "Please select..."), _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__[item].map(function (i) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
             key: i,
             value: i
@@ -27178,6 +27166,17 @@ if (__DEV__) {
 
 module.exports = warning;
 
+
+/***/ }),
+
+/***/ "./public/data/itemData.json":
+/*!***********************************!*\
+  !*** ./public/data/itemData.json ***!
+  \***********************************/
+/*! exports provided: category, subcategory, item, size, condition, brand, color, default */
+/***/ (function(module) {
+
+module.exports = {"category":["Clothing","Appliances","Books","Toys","Bedding"],"subcategory":["Tops","Bottoms","Footwear"],"item":["Tee","Shirt","Crop top","Dress","Sweater","Jacket"],"size":["6","8","10","12","14","16","18","20"],"condition":["Used","New"],"brand":["Cotton On","Country Road","Dotti","Factorie","Forever New","Glassons","Jay Jays","Jeans West","Just Jeans","Kookai","Top Shop"],"color":["Black","White","Grey","Red","Orange","Yellow","Green","Blue","Purple","Pink"]};
 
 /***/ })
 
