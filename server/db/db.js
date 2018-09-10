@@ -14,12 +14,12 @@ function addItem (item, testConn) {
   const conn = testConn || connection
   return conn('items')
     .insert({
-      'category': item.category,
-      'subcategory': item.subcategory,
-      'item': item.item,
-      'size': item.size,
-      'condition': item.condition,
-      'brand': item.brand
+      'category': item.category.value,
+      'subcategory': item.subcategory.value,
+      'item': item.item.value,
+      'size': item.size.value,
+      'condition': item.condition.value,
+      'brand': item.brand.value
     })
 }
 

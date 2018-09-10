@@ -7,3 +7,4 @@ App for op shops to list items online for customers to browse.
   - refactor
   - css
   - google images api
+  - change .bind functions to arrow functions (see ItemsAdd component as an example)

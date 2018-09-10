@@ -439,8 +439,6 @@ __webpack_require__.r(__webpack_exports__);
 var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../public/data/itemData.json */ "./public/data/itemData.json", 1);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -456,6 +454,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -474,31 +474,29 @@ function (_React$Component) {
     _classCallCheck(this, ItemsAdd);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ItemsAdd).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (selectedOption, item) {
+      _this.setState(_defineProperty({}, item, selectedOption));
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (e) {
+      _api__WEBPACK_IMPORTED_MODULE_2__["default"].addItem(_this.state);
+    });
+
     _this.state = {
-      category: '',
-      subcategory: '',
-      item: '',
-      size: '',
-      condition: '',
-      brand: '',
-      user_id: ''
+      category: {},
+      subcategory: {},
+      item: {},
+      size: {},
+      condition: {},
+      brand: {},
+      color: {},
+      user_id: {}
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(ItemsAdd, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
-    }
-  }, {
-    key: "handleClick",
-    value: function handleClick(e) {
-      _api__WEBPACK_IMPORTED_MODULE_2__["default"].addItem(this.state);
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -510,18 +508,13 @@ function (_React$Component) {
         }, item.charAt(0).toUpperCase() + item.slice(1) + ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
           name: item,
           value: _this2.state[item],
-          onChange: _this2.handleChange,
+          onChange: function onChange(selectedOption) {
+            return _this2.handleChange(selectedOption, item);
+          },
           options: _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__[item].map(function (i) {
             return {
-              key: {
-                i: i
-              },
-              value: {
-                i: i
-              },
-              label: {
-                i: i
-              }
+              value: i,
+              label: i
             };
           })
         }));
