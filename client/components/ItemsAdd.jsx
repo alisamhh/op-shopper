@@ -1,4 +1,5 @@
 import React from 'react'
+import Select from 'react-select'
 
 import api from '../api'
 
@@ -40,12 +41,24 @@ class ItemsAdd extends React.Component {
         <h3>Add item</h3>
         {dataListsKeys.map((item) => {
           return <div key={item}>{item.charAt(0).toUpperCase() + item.slice(1) + ' '}
-            <select value={this.state[item]} name={item} onChange={this.handleChange}>
+            <Select
+              name={item}
+              value={this.state[item]}
+              onChange={this.handleChange}
+              options={dataLists[item].map((i) => {
+                return {
+                  key: {i},
+                  value: {i},
+                  label: {i}
+                }
+              })}
+            />
+            {/*              <select value={this.state[item]} name={item} onChange={this.handleChange}>
               <option value="">Please select...</option>
               {dataLists[item].map((i) => {
                 return <option key={i} value={i}>{i}</option>
               })}
-            </select>
+            </select>  */}
           </div>
         })}
         <input type="hidden" name="user_id" />
