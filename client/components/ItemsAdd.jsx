@@ -21,7 +21,6 @@ class ItemsAdd extends React.Component {
       user_id: {}
     }
   }
-  
 
   handleChange = (selectedOption, item) => {
     this.setState({ 
