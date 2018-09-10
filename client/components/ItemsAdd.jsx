@@ -1,45 +1,38 @@
 import React from 'react'
+import Select from 'react-select'
 
 import api from '../api'
 
 import GoHome from './GoHome'
 
+import dataLists from '../../public/data/itemData.json'
+
 class ItemsAdd extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      category: '',
-      subcategory: '',
-      item: '',
-      size: '',
-      condition: '',
-      brand: '',
-      user_id: ''
+      category: {},
+      subcategory: {},
+      item: {},
+      size: {},
+      condition: {},
+      brand: {},
+      color: {},
+      user_id: {}
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleChange (e) {
-    this.setState({
-      [e.target.name]: e.target.value
+  handleChange = (selectedOption, item) => {
+    this.setState({ 
+      [item]: selectedOption
     })
   }
 
-  handleClick (e) {
+  handleClick = (e) => {
     api.addItem(this.state)
   }
 
   render () {
-    const dataLists = {
-      category: ['Clothing', 'Appliances', 'Books', 'Toys', 'Bedding'],
-      subcategory: ['Tops', 'Bottoms', 'Footwear'],
-      item: ['Tee', 'Shirt', 'Crop top', 'Dress', 'Sweater', 'Jacket'],
-      size: ['6', '8', '10', '12', '14', '16', '18', '20'],
-      condition: ['Used', 'New'],
-      brand: ['Cotton On', 'Country Road', 'Dotti', 'Factorie', 'Forever New', 'Glassons', 'Jay Jays', 'Jeans West', 'Just Jeans', 'Kookai', 'Top Shop'],
-      color: ['Black', 'White', 'Grey', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink']
-    }
     const dataListsKeys = Object.keys(dataLists)
 
     return (
@@ -47,12 +40,23 @@ class ItemsAdd extends React.Component {
         <h3>Add item</h3>
         {dataListsKeys.map((item) => {
           return <div key={item}>{item.charAt(0).toUpperCase() + item.slice(1) + ' '}
-            <select value={this.state[item]} name={item} onChange={this.handleChange}>
+              <Select
+              name={item}
+              value={this.state[item]}
+              onChange={(selectedOption) => this.handleChange(selectedOption, item)}
+              options={dataLists[item].map((i) => {
+                return {
+                  value: i,
+                  label: i
+                }
+              })}
+            /> 
+{/*                <select value={this.state[item]} name={item} onChange={this.handleChange}>
               <option value="">Please select...</option>
               {dataLists[item].map((i) => {
                 return <option key={i} value={i}>{i}</option>
               })}
-            </select>
+            </select>  */}
           </div>
         })}
         <input type="hidden" name="user_id" />

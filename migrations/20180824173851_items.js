@@ -7,6 +7,7 @@ exports.up = (knex, Promise) => {
     table.string('size')
     table.string('condition')
     table.string('brand')
+    table.string('color')
     table.boolean('available')
     table.integer('user_id').references('users.id')
   })

@@ -7,17 +7,8 @@ App for op shops to list items online for customers to browse.
   - refactor
   - css
   - google images api
+  - change .bind functions to arrow functions (see ItemsAdd component as an example)
   - create json file of category dropdowns?
   
   Conditional dropdowns:
   https://stackblitz.com/edit/react-mvqwr7?file=index.js
-
-
-## Add below dev dependency:
-  yarn add babel-plugin-transform-class-properties
-
-  (then in package.json add the below under "babel" property)
-
-  "plugins": [
-    "transform-class-properties"
-    ]
