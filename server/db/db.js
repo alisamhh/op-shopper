@@ -19,7 +19,8 @@ function addItem (item, testConn) {
       'item': item.item.value,
       'size': item.size.value,
       'condition': item.condition.value,
-      'brand': item.brand.value
+      'brand': item.brand.value,
+      'color': item.color.value
     })
 }
 
