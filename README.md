@@ -11,3 +11,13 @@ App for op shops to list items online for customers to browse.
   
   Conditional dropdowns:
   https://stackblitz.com/edit/react-mvqwr7?file=index.js
+
+
+## Add below dev dependency:
+  yarn add babel-plugin-transform-class-properties
+
+  (then in package.json add the below under "babel" property)
+
+  "plugins": [
+    "transform-class-properties"
+    ]
