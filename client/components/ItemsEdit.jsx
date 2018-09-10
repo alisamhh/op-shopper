@@ -16,6 +16,7 @@ class ItemsEdit extends React.Component {
       size: '',
       condition: '',
       brand: '',
+      color: '',
       user_id: ''
     }
     this.handleChange = this.handleChange.bind(this)
@@ -31,7 +32,8 @@ class ItemsEdit extends React.Component {
           item: response.body.item.item,
           size: response.body.item.size,
           condition: response.body.item.condition,
-          brand: response.body.item.brand
+          brand: response.body.item.brand,
+          color: response.body.item.color
         })
       })
   }

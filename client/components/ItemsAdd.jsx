@@ -39,25 +39,16 @@ class ItemsAdd extends React.Component {
       <div>
         <h3>Add item</h3>
         {dataListsKeys.map((item) => {
-          return <div key={item}>{item.charAt(0).toUpperCase() + item.slice(1) + ' '}
+          return (<div key={item}>{item.charAt(0).toUpperCase() + item.slice(1) + ' '}
               <Select
               name={item}
               value={this.state[item]}
               onChange={(selectedOption) => this.handleChange(selectedOption, item)}
-              options={dataLists[item].map((i) => {
-                return {
-                  value: i,
-                  label: i
-                }
+              options={dataLists[item].filter((i) => {
+                return !i.link || (this.state.category.value && i.link === this.state.category.value)
               })}
             /> 
-{/*                <select value={this.state[item]} name={item} onChange={this.handleChange}>
-              <option value="">Please select...</option>
-              {dataLists[item].map((i) => {
-                return <option key={i} value={i}>{i}</option>
-              })}
-            </select>  */}
-          </div>
+          </div>)
         })}
         <input type="hidden" name="user_id" />
         <button onClick={this.handleClick}>Add Item</button>

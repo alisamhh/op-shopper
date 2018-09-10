@@ -511,11 +511,8 @@ function (_React$Component) {
           onChange: function onChange(selectedOption) {
             return _this2.handleChange(selectedOption, item);
           },
-          options: _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__[item].map(function (i) {
-            return {
-              value: i,
-              label: i
-            };
+          options: _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__[item].filter(function (i) {
+            return !i.link || _this2.state.category.value && i.link === _this2.state.category.value;
           })
         }));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -682,6 +679,7 @@ function (_React$Component) {
       size: '',
       condition: '',
       brand: '',
+      color: '',
       user_id: ''
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -701,7 +699,8 @@ function (_React$Component) {
           item: response.body.item.item,
           size: response.body.item.size,
           condition: response.body.item.condition,
-          brand: response.body.item.brand
+          brand: response.body.item.brand,
+          color: response.body.item.color
         });
       });
     }
@@ -35811,7 +35810,7 @@ module.exports = g;
 /*! exports provided: category, subcategory, item, size, condition, brand, color, default */
 /***/ (function(module) {
 
-module.exports = {"category":["Clothing","Appliances","Books","Toys","Bedding"],"subcategory":["Tops","Bottoms","Footwear"],"item":["Tee","Shirt","Crop top","Dress","Sweater","Jacket"],"size":["6","8","10","12","14","16","18","20"],"condition":["Used","New"],"brand":["Cotton On","Country Road","Dotti","Factorie","Forever New","Glassons","Jay Jays","Jeans West","Just Jeans","Kookai","Top Shop"],"color":["Black","White","Grey","Red","Orange","Yellow","Green","Blue","Purple","Pink"]};
+module.exports = {"category":[{"value":"Clothing","label":"Clothing"},{"value":"Appliances","label":"Appliances"},{"value":"Books","label":"Books"},{"value":"Toys","label":"Toys"},{"value":"Bedding","label":"Bedding"}],"subcategory":[{"value":"Tops","label":"Tops","link":"Clothing"},{"value":"Bottoms","label":"Bottoms","link":"Clothing"},{"value":"Footwear","label":"Footwear","link":"Clothing"},{"value":"Sheets","label":"Sheets","link":"Bedding"},{"value":"Microwave","label":"Microwave","link":"Appliances"}],"item":[{"value":"Tee","label":"Tee"},{"value":"Shirt","label":"Shirt"},{"value":"Crop top","label":"Crop top"},{"value":"Dress","label":"Dress"},{"value":"Sweater","label":"Sweater"},{"value":"Jacket","label":"Jacket"}],"size":[{"value":"6","label":"6"},{"value":"8","label":"8"},{"value":"10","label":"10"},{"value":"12","label":"12"},{"value":"14","label":"14"},{"value":"16","label":"16"},{"value":"18","label":"18"},{"value":"20","label":"20"}],"condition":[{"value":"Used","label":"Used"},{"value":"New","label":"New"}],"brand":[{"value":"Cotton On","label":"Cotton On"},{"value":"Country Road","label":"Country Road"},{"value":"Dotti","label":"Dotti"},{"value":"Factorie","label":"Factorie"},{"value":"Forever New","label":"Forever New"},{"value":"Glassons","label":"Glassons"},{"value":"Jay Jays","label":"Jay Jays"},{"value":"Jeans West","label":"Jeans West"},{"value":"Just Jeans","label":"Just Jeans"},{"value":"Kookai","label":"Kookai"},{"value":"Top Shop","label":"Top Shop"}],"color":[{"value":"Black","label":"Black"},{"value":"White","label":"White"},{"value":"Grey","label":"Grey"},{"value":"Red","label":"Red"},{"value":"Orange","label":"Orange"},{"value":"Yellow","label":"Yellow"},{"value":"Green","label":"Green"},{"value":"Blue","label":"Blue"},{"value":"Purple","label":"Purple"},{"value":"Pink","label":"Pink"}]};
 
 /***/ })
 
