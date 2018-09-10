@@ -24,7 +24,6 @@ function addItem (item, testConn) {
     })
 }
 
-
 function getItems (testConn) {
   const conn = testConn || connection
   return conn('items').select()
