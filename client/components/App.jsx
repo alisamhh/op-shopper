@@ -3,10 +3,9 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Header from './Header'
 import Items from './Items'
-import ItemsAdd from './ItemsAdd'
 import ItemsOne from './ItemsOne'
-import ItemsEdit from './ItemsEdit'
 import ItemsDelete from './ItemsDelete'
+import CreateItem from './CreateItem'
 import Footer from './Footer'
 
 const App = props => {
@@ -15,9 +14,9 @@ const App = props => {
       <div>
         <Route path='/' component={Header} />
         <Route exact path='/' component={Items} />
-        <Route path='/add' component={ItemsAdd} />
+        <Route path='/add' component={CreateItem} />
+        <Route path='/edit/:id' component={CreateItem} />
         <Route path='/id/:id' component={ItemsOne} />
-        <Route path='/edit/:id' component={ItemsEdit} />
         <Route path='/delete/:id' component={ItemsDelete} />
         <Route path='/' component={Footer} />
       </div>

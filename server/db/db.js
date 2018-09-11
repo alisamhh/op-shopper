@@ -14,13 +14,13 @@ function addItem (item, testConn) {
   const conn = testConn || connection
   return conn('items')
     .insert({
-      'category': item.category.value,
-      'subcategory': item.subcategory.value,
-      'item': item.item.value,
-      'size': item.size.value,
-      'condition': item.condition.value,
-      'brand': item.brand.value,
-      'color': item.color.value
+      'category': item.category,
+      'subcategory': item.subcategory,
+      'item': item.item,
+      'size': item.size,
+      'condition': item.condition,
+      'brand': item.brand,
+      'color': item.color
     })
 }
 
@@ -39,13 +39,13 @@ function editItem (id, item, testConn) {
   return conn('items')
     .where('id', id)
     .update({
-      condition: item.condition.value,
-      category: item.category.value,
-      subcategory: item.subcategory.value,
-      item: item.item.value,
-      size: item.size.value,
-      brand: item.brand.value,
-      color: item.color.value
+      condition: item.condition,
+      category: item.category,
+      subcategory: item.subcategory,
+      item: item.item,
+      size: item.size,
+      brand: item.brand,
+      color: item.color
     })
 }
 
