@@ -501,23 +501,20 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var dataListsKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), dataListsKeys.map(function (item) {
+      var itemDataKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add item"), itemDataKeys.map(function (key) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: item
-        }, item.charAt(0).toUpperCase() + item.slice(1) + ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          name: item,
-          value: _this2.state[item],
+          key: key
+        }, key.charAt(0).toUpperCase() + key.slice(1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          name: key,
+          value: _this2.state[key],
           onChange: function onChange(selectedOption) {
-            return _this2.handleChange(selectedOption, item);
+            return _this2.handleChange(selectedOption, key);
           },
-          options: _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__[item].filter(function (i) {
+          options: _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__[key].filter(function (i) {
             return !i.link || _this2.state.category.value && i.link === _this2.state.category.value;
           })
         }));
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "hidden",
-        name: "user_id"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick
       }, "Add Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GoHome__WEBPACK_IMPORTED_MODULE_3__["default"], null));
@@ -632,13 +629,14 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api */ "./client/api.js");
-/* harmony import */ var _GoHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoHome */ "./client/components/GoHome.jsx");
-/* harmony import */ var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../public/data/itemData.json */ "./public/data/itemData.json");
-var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../public/data/itemData.json */ "./public/data/itemData.json", 1);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api */ "./client/api.js");
+/* harmony import */ var _GoHome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GoHome */ "./client/components/GoHome.jsx");
+/* harmony import */ var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../public/data/itemData.json */ "./public/data/itemData.json");
+var _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../public/data/itemData.json */ "./public/data/itemData.json", 1);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -656,6 +654,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -672,18 +673,25 @@ function (_React$Component) {
     _classCallCheck(this, ItemsEdit);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ItemsEdit).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSelect", function (selectedOption, key) {
+      _this.setState(_defineProperty({}, key, selectedOption.value));
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSave", function (e) {
+      _api__WEBPACK_IMPORTED_MODULE_2__["default"].editItem(_this.props.match.params.id, _this.state);
+    });
+
     _this.state = {
-      category: '',
-      subcategory: '',
-      item: '',
-      size: '',
-      condition: '',
-      brand: '',
-      color: '',
-      user_id: ''
+      category: {},
+      subcategory: {},
+      item: {},
+      size: {},
+      condition: {},
+      brand: {},
+      color: {},
+      user_id: {}
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -692,55 +700,35 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _api__WEBPACK_IMPORTED_MODULE_1__["default"].getItem(this.props.match.params.id).then(function (response) {
-        _this2.setState({
-          category: response.body.item.category,
-          subcategory: response.body.item.subcategory,
-          item: response.body.item.item,
-          size: response.body.item.size,
-          condition: response.body.item.condition,
-          brand: response.body.item.brand,
-          color: response.body.item.color
-        });
+      _api__WEBPACK_IMPORTED_MODULE_2__["default"].getItem(this.props.match.params.id).then(function (response) {
+        _this2.setState(_objectSpread({}, response.body.item));
       });
-    }
-  }, {
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
-    }
-  }, {
-    key: "handleClick",
-    value: function handleClick(e) {
-      _api__WEBPACK_IMPORTED_MODULE_1__["default"].editItem(this.props.match.params.id, this.state);
     }
   }, {
     key: "render",
     value: function render() {
       var _this3 = this;
 
-      var dataListsKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Edit item #", this.props.match.params.id), dataListsKeys.map(function (item) {
+      var itemDataKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Edit item #", this.props.match.params.id), itemDataKeys.map(function (key) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: item
-        }, item.charAt(0).toUpperCase() + item.slice(1) + ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-          value: _this3.state[item],
-          name: item,
-          onChange: _this3.handleChange
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
-        }, "Please select..."), _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_3__[item].map(function (i) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-            key: i,
-            value: i
-          }, i);
-        })));
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "hidden",
-        name: "user_id"
+          key: key
+        }, key.charAt(0).toUpperCase() + key.slice(1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          name: key,
+          value: {
+            value: "".concat(_this3.state[key]),
+            label: "".concat(_this3.state[key])
+          },
+          onChange: function onChange(selected) {
+            return _this3.handleSelect(selected, key);
+          },
+          options: _public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__[key].filter(function (i) {
+            return !i.link || _this3.state.category.value && i.link === _this3.state.category.value;
+          })
+        }));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleClick
-      }, "Edit Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GoHome__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+        onClick: this.handleSave
+      }, "Save Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GoHome__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 

@@ -5,7 +5,7 @@ import api from '../api'
 
 import GoHome from './GoHome'
 
-import dataLists from '../../public/data/itemData.json'
+import itemData from '../../public/data/itemData.json'
 
 class ItemsAdd extends React.Component {
   constructor (props) {
@@ -33,24 +33,23 @@ class ItemsAdd extends React.Component {
   }
 
   render () {
-    const dataListsKeys = Object.keys(dataLists)
+    const itemDataKeys = Object.keys(itemData)
 
     return (
       <div>
         <h3>Add item</h3>
-        {dataListsKeys.map((item) => {
-          return (<div key={item}>{item.charAt(0).toUpperCase() + item.slice(1) + ' '}
+        {itemDataKeys.map((key) => {
+          return (<div key={key}>{key.charAt(0).toUpperCase() + key.slice(1)}
               <Select
-              name={item}
-              value={this.state[item]}
-              onChange={(selectedOption) => this.handleChange(selectedOption, item)}
-              options={dataLists[item].filter((i) => {
+              name={key}
+              value={this.state[key]}
+              onChange={(selectedOption) => this.handleChange(selectedOption, key)}
+              options={itemData[key].filter((i) => {
                 return !i.link || (this.state.category.value && i.link === this.state.category.value)
               })}
             /> 
           </div>)
         })}
-        <input type="hidden" name="user_id" />
         <button onClick={this.handleClick}>Add Item</button>
         <GoHome />
       </div>
