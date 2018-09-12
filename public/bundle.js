@@ -334,6 +334,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -350,10 +352,14 @@ function (_React$Component) {
     _classCallCheck(this, ItemDelete);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ItemDelete).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (e) {
+      _api__WEBPACK_IMPORTED_MODULE_1__["default"].deleteItem(_this.props.match.params.id);
+    });
+
     _this.state = {
       item: {}
     };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -367,11 +373,6 @@ function (_React$Component) {
           item: response.body.item
         });
       });
-    }
-  }, {
-    key: "handleClick",
-    value: function handleClick(e) {
-      _api__WEBPACK_IMPORTED_MODULE_1__["default"].deleteItem(this.props.match.params.id);
     }
   }, {
     key: "render",
