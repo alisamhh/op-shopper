@@ -28,11 +28,13 @@ class ItemUpsert extends React.Component {
         })
     }
   }
+
   onSelect = (selectedOption, item) => {
     this.setState({ 
       [item]: selectedOption.value
     })
   }
+
   onClick = () => {
     if (this.props.match.params.id) {
       api.editItem(this.props.match.params.id, this.state)
@@ -40,6 +42,7 @@ class ItemUpsert extends React.Component {
       api.addItem(this.state)
     }
   }
+
   render () {
     const title = this.props.match.params.id
       ? `Edit item #${this.props.match.params.id}`
@@ -69,6 +72,7 @@ class ItemUpsert extends React.Component {
                 </div>
             )})
           }
+          
         <button onClick={this.onClick}>{buttonLabel}</button>
         <GoHome />
       </div>
