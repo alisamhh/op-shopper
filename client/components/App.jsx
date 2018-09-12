@@ -5,7 +5,7 @@ import Header from './Header'
 import Items from './Items'
 import ItemView from './ItemView'
 import ItemDelete from './ItemDelete'
-import CreateItem from './CreateItem'
+import ItemUpsert from './ItemUpsert'
 import Footer from './Footer'
 
 const App = props => {
@@ -14,8 +14,8 @@ const App = props => {
       <div>
         <Route path='/' component={Header} />
         <Route exact path='/' component={Items} />
-        <Route path='/add' component={CreateItem} />
-        <Route path='/edit/:id' component={CreateItem} />
+        <Route path='/add' component={ItemUpsert} />
+        <Route path='/edit/:id' component={ItemUpsert} />
         <Route path='/id/:id' component={ItemView} />
         <Route path='/delete/:id' component={ItemDelete} />
         <Route path='/' component={Footer} />
