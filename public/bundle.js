@@ -707,14 +707,30 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Items"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, this.state.items.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          key: item.id,
-          item: item
-        });
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      function chunkArray(myArray, chunkSize) {
+        var arrayLength = myArray.length;
+        var tempArray = [];
+
+        for (var i = 0; i < arrayLength; i += chunkSize) {
+          var myChunk = myArray.slice(i, i + chunkSize);
+          tempArray.push(myChunk);
+        }
+
+        return tempArray;
+      }
+
+      var itemsGroupedByFour = chunkArray(this.state.items, 4);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Items"), itemsGroupedByFour.map(function (row, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row",
+          key: i
+        }, row.map(function (item) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            key: item.id,
+            item: item
+          });
+        }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/add"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Add item")));
     }
