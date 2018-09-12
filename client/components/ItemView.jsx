@@ -6,7 +6,7 @@ import api from '../api'
 import ItemTable from './ItemTable'
 import GoHome from './GoHome'
 
-class ItemsOne extends React.Component {
+class ItemView extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -40,4 +40,4 @@ class ItemsOne extends React.Component {
   }
 }
 
-export default ItemsOne
+export default ItemView

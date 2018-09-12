@@ -5,7 +5,7 @@ import api from '../api'
 import ItemTable from './ItemTable'
 import GoHome from './GoHome'
 
-class ItemsDelete extends React.Component {
+class ItemDelete extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -40,4 +40,4 @@ class ItemsDelete extends React.Component {
   }
 }
 
-export default ItemsDelete
+export default ItemDelete
