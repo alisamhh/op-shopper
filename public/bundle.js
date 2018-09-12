@@ -114,7 +114,7 @@ function getItem(id) {
 
 function addItem(item) {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(itemsApi, "/item")).send(item).then(function (res) {
-    console.log('success', res);
+    return res.body;
   }).catch(function (err) {
     console.log(err.message);
   });
@@ -490,7 +490,9 @@ function (_React$Component) {
           _this.props.history.push("/id/".concat(id));
         });
       } else {
-        _api__WEBPACK_IMPORTED_MODULE_2__["default"].addItem(_this.state);
+        _api__WEBPACK_IMPORTED_MODULE_2__["default"].addItem(_this.state).then(function (newId) {
+          _this.props.history.push("/id/".concat(newId));
+        });
       }
     });
 

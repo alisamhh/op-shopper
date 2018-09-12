@@ -9,8 +9,8 @@ router.use(express.json())
 router.post('/item', (req, res) => {
   const item = req.body
   db.addItem(item)
-    .then(() => {
-      res.status(201).end()
+    .then((id) => {
+      res.status(201).json(id[0]).end()
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

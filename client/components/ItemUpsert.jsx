@@ -45,6 +45,9 @@ class ItemUpsert extends React.Component {
         })
     } else {
       api.addItem(this.state)
+        .then((newId) => {
+          this.props.history.push(`/id/${newId}`)          
+        })
     }
   }
 
