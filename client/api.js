@@ -23,7 +23,7 @@ function addItem (item) {
     .post(`${itemsApi}/item`)
     .send(item)
     .then((res) => {
-      console.log('success')
+      console.log('success', res)
     })
     .catch(err => {
       console.log(err.message)

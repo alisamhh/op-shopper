@@ -114,7 +114,7 @@ function getItem(id) {
 
 function addItem(item) {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(itemsApi, "/item")).send(item).then(function (res) {
-    console.log('success');
+    console.log('success', res);
   }).catch(function (err) {
     console.log(err.message);
   });
