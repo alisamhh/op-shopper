@@ -484,7 +484,9 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClick", function () {
       if (_this.props.match.params.id) {
-        _api__WEBPACK_IMPORTED_MODULE_2__["default"].editItem(_this.props.match.params.id, _this.state);
+        _api__WEBPACK_IMPORTED_MODULE_2__["default"].editItem(_this.props.match.params.id, _this.state).then(function () {
+          _this.props.history.push("/id/".concat(_this.props.match.params.id));
+        });
       } else {
         _api__WEBPACK_IMPORTED_MODULE_2__["default"].addItem(_this.state);
       }

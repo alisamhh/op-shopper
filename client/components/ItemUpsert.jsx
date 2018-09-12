@@ -38,6 +38,9 @@ class ItemUpsert extends React.Component {
   onClick = () => {
     if (this.props.match.params.id) {
       api.editItem(this.props.match.params.id, this.state)
+        .then(() => {
+          this.props.history.push(`/id/${this.props.match.params.id}`)
+        })
     } else {
       api.addItem(this.state)
     }
@@ -72,7 +75,6 @@ class ItemUpsert extends React.Component {
                 </div>
             )})
           }
-          
         <button onClick={this.onClick}>{buttonLabel}</button>
         <GoHome />
       </div>
