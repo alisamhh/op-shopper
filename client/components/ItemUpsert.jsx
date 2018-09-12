@@ -19,8 +19,9 @@ class ItemUpsert extends React.Component {
     }
   }
   componentDidMount () {
-    if (this.props.match.params.id){
-      api.getItem(this.props.match.params.id)
+    const id = this.props.match.params.id
+    if (id){
+      api.getItem(id)
         .then(response => {
           this.setState({
             ...response.body.item
@@ -36,10 +37,11 @@ class ItemUpsert extends React.Component {
   }
 
   onClick = () => {
-    if (this.props.match.params.id) {
-      api.editItem(this.props.match.params.id, this.state)
+    const id = this.props.match.params.id    
+    if (id) {
+      api.editItem(id, this.state)
         .then(() => {
-          this.props.history.push(`/id/${this.props.match.params.id}`)
+          this.props.history.push(`/id/${id}`)
         })
     } else {
       api.addItem(this.state)
@@ -47,10 +49,11 @@ class ItemUpsert extends React.Component {
   }
 
   render () {
-    const title = this.props.match.params.id
-      ? `Edit item #${this.props.match.params.id}`
+    const id = this.props.match.params.id    
+    const title = id
+      ? `Edit item #${id}`
       : 'Add item'
-    const buttonLabel = this.props.match.params.id
+    const buttonLabel = id
       ? "Save Item"
       : "Add Item"
     const itemDataKeys = Object.keys(itemData)

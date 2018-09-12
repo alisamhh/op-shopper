@@ -483,9 +483,11 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClick", function () {
-      if (_this.props.match.params.id) {
-        _api__WEBPACK_IMPORTED_MODULE_2__["default"].editItem(_this.props.match.params.id, _this.state).then(function () {
-          _this.props.history.push("/id/".concat(_this.props.match.params.id));
+      var id = _this.props.match.params.id;
+
+      if (id) {
+        _api__WEBPACK_IMPORTED_MODULE_2__["default"].editItem(id, _this.state).then(function () {
+          _this.props.history.push("/id/".concat(id));
         });
       } else {
         _api__WEBPACK_IMPORTED_MODULE_2__["default"].addItem(_this.state);
@@ -510,8 +512,10 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      if (this.props.match.params.id) {
-        _api__WEBPACK_IMPORTED_MODULE_2__["default"].getItem(this.props.match.params.id).then(function (response) {
+      var id = this.props.match.params.id;
+
+      if (id) {
+        _api__WEBPACK_IMPORTED_MODULE_2__["default"].getItem(id).then(function (response) {
           _this2.setState(_objectSpread({}, response.body.item));
         });
       }
@@ -521,8 +525,9 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var title = this.props.match.params.id ? "Edit item #".concat(this.props.match.params.id) : 'Add item';
-      var buttonLabel = this.props.match.params.id ? "Save Item" : "Add Item";
+      var id = this.props.match.params.id;
+      var title = id ? "Edit item #".concat(id) : 'Add item';
+      var buttonLabel = id ? "Save Item" : "Add Item";
       var itemDataKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, title), itemDataKeys.map(function (key) {
         var value = _this3.state[key] ? {
