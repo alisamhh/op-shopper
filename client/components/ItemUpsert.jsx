@@ -51,8 +51,8 @@ class ItemUpsert extends React.Component {
   render () {
     const id = this.props.match.params.id    
     const title = id
-      ? `Edit item #${id}`
-      : 'Add item'
+      ? `Edit Item #${id}`
+      : 'Add Item'
     const buttonLabel = id
       ? "Save Item"
       : "Add Item"

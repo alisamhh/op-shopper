@@ -526,7 +526,7 @@ function (_React$Component) {
       var _this3 = this;
 
       var id = this.props.match.params.id;
-      var title = id ? "Edit item #".concat(id) : 'Add item';
+      var title = id ? "Edit Item #".concat(id) : 'Add Item';
       var buttonLabel = id ? "Save Item" : "Add Item";
       var itemDataKeys = Object.keys(_public_data_itemData_json__WEBPACK_IMPORTED_MODULE_4__);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, title), itemDataKeys.map(function (key) {
