@@ -1,0 +1,56 @@
+body {
+  margin: 5%;
+  background: wheat;
+  background-image:
+    radial-gradient(salmon 20%, transparent 0), 
+    radial-gradient(salmon 20%, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  color: salmon;
+}
+
+.item {
+  padding: 15px;
+  text-align: center;
+}
+
+/* .flex {
+  display: flex;
+}
+
+.additem {
+  justify-content: center;
+  text-align: center;
+} */
+
+span, table, .additem, .item {
+  background-color: wheat;
+}
+
+h1, h2 {
+  text-align: center;  
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer span {
+  background-color: wheat;
+  padding: 10px;
+}
+
+button {
+  border: salmon 1px solid;
+  color: salmon;
+  background-color: wheat;  
+}
+
+/* table {
+  align-content: center;
+} */
+
+button:hover {
+  border: rgb(253, 93, 75) 1px solid;
+  color: rgb(253, 93, 75);
+}
